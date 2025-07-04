@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursed Nights at Asylum - Официальный сайт</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Cursed Nights at Asylum</h1>
+                <p>Выживи 5 ночей в проклятой лечебнице</p>
+            </div>
+            
+            <!-- Меню-бургер для мобильных устройств -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <!-- Навигация -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">Об игре</a></li>
+                    <li><a href="#monsters">Монстры</a></li>
+                    <li><a href="#gameplay">Игровой процесс</a></li>
+                    <li><a href="#screenshots">Галерея</a></li>
+                    <li><a href="#download">Скачать</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Секция с описанием игры -->
+        <section id="about" class="game-info">
+            <div class="floating-asylum">
+                <img src="asylum-icon.png" alt="Чертеж лечебницы">
+            </div>
+            
+            <article>
+                <h2>Об игре</h2>
+                <p>Добро пожаловать в <strong>Blackwood Asylum</strong> - бывшую психиатрическую лечебницу с темным прошлым. Вы - ночной охранник, принявшийся за простую работу... которая превратилась в кошмар.</p>
+                
+                <p>Лечебница, выкупленная фармацевтической компанией <abbr title="Nexus Pharmaceuticals">NP</abbr>, скрывает ужасающие секреты в своих подвалах. За 5 ночей вам предстоит столкнуться с 7 уникальными монстрами - результатами неудачных экспериментов.</p>
+                
+                <blockquote>
+                    "Никто не верил моим отчетам... пока не исчезли предыдущие 4 охранника."
+                    <cite>Из записок выжившего</cite>
+                </blockquote>
+                
+                <div class="features">
+                    <h3>Особенности игры:</h3>
+                    <ul>
+                        <li>Динамическая система угроз</li>
+                        <li>7 уникальных монстров с разным поведением</li>
+                        <li>Реалистичная система ресурсов</li>
+                        <li>Прогрессирующая сложность</li>
+                        <li>Атмосферный саундтрек</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- Секция с монстрами -->
+        <section id="monsters" class="monsters-section">
+            <h2>Обитатели лечебницы</h2>
+            
+            <div class="monsters-grid">
+                <article class="monster-card">
+                    <div class="monster-icon">
+                        <img src="patient-icon.png" alt="Пациент">
+                    </div>
+                    <h3>Пациент</h3>
+                    <p>Маркус Вейл, 38 лет</p>
+                    <p>Медленный, но неумолимый зомби в смирительной рубашке</p>
+                </article>
+                
+                <article class="monster-card">
+                    <div class="monster-icon">
+                        <img src="headless-icon.png" alt="Сорвиголова">
+                    </div>
+                    <h3>Сорвиголова</h3>
+                    <p>Артур Финч, 45 лет</p>
+                    <p>Обезглавленное создание с сенсорным модулем вместо головы</p>
+                </article>
+                
+                <article class="monster-card">
+                    <div class="monster-icon">
+                        <img src="merged-icon.png" alt="Приращённый">
+                    </div>
+                    <h3>Приращённый</h3>
+                    <p>Гибрид из 5 тел</p>
+                    <p>Чудовищная многоножка с коллективным разумом</p>
+                </article>
+                
+                <article class="monster-card">
+                    <div class="monster-icon">
+                        <img src="bird-icon.png" alt="Птица Дэйв">
+                    </div>
+                    <h3>Птица Дэйв</h3>
+                    <p>Дэйв Миллер, 42 года</p>
+                    <p>4.4-метровый гуманоид с птичьими чертами. Ненавидит взгляды</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Секция игрового процесса -->
+        <section id="gameplay" class="gameplay-section">
+            <h2>Игровой процесс</h2>
+            
+            <div class="gameplay-content">
+                <div class="tools-info">
+                    <h3>Ваши инструменты</h3>
+                    <ol>
+                        <li>Система безопасности
+                            <ul>
+                                <li>Камеры наблюдения</li>
+                                <li>Датчики движения</li>
+                            </ul>
+                        </li>
+                        <li>Система защиты
+                            <ul>
+                                <li>Бронированные двери</li>
+                                <li>Вентиляционные заслонки</li>
+                            </ul>
+                        </li>
+                        <li>Ручные инструменты
+                            <ul>
+                                <li>Фонарик</li>
+                                <li>Рация</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                
+                <div class="difficulty-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ночь</th>
+                                <th>Активные монстры</th>
+                                <th>Сложность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>★☆☆☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>★★☆☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>5</td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>6</td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>★★★★★</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Галерея скриншотов -->
+        <section id="screenshots" class="gallery-section">
+            <h2>Галерея скриншотов</h2>
+            
+            <div class="gallery-grid">
+                <figure>
+                    <img src="screenshot1.jpg" alt="Охранный пост">
+                    <figcaption>Охранный пост</figcaption>
+                </figure>
+                <figure>
+                    <img src="screenshot2.jpg" alt="Коридор лечебницы">
+                    <figcaption>Коридор лечебницы</figcaption>
+                </figure>
+                <figure>
+                    <img src="screenshot3.jpg" alt="Палата пациента">
+                    <figcaption>Палата пациента</figcaption>
+                </figure>
+                <figure>
+                    <img src="screenshot4.jpg" alt="Вентиляционные шахты">
+                    <figcaption>Вентиляционные шахты</figcaption>
+                </figure>
+                <figure>
+                    <img src="screenshot5.jpg" alt="Монстр в темноте">
+                    <figcaption>Монстр в темноте</figcaption>
+                </figure>
+                <figure>
+                    <img src="screenshot6.jpg" alt="Система наблюдения">
+                    <figcaption>Система наблюдения</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <!-- Секция загрузки -->
+    <section id="download" class="download-section">
+        <div class="download-content">
+            <h2>Начните свое кошмарное приключение</h2>
+            <div class="download-options">
+                <a href="#" class="btn">Скачать для Windows</a>
+                <a href="#" class="btn">Скачать для macOS</a>
+            </div>
+            <p>Версия 1.0 | Размер: 850 MB</p>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="footer-content">
+            <address>
+                <p>Разработчик: <span>Nightmare Studio</span></p>
+                <p>Контакты: <a href="mailto:support@cursednights.com">support@cursednights.com</a></p>
+                <p>Телефон: <a href="tel:+78005551234">+7 (800) 555-1234</a></p>
+            </address>
+            <div class="social-links">
+                <a href="#"><img src="vk-icon.png" alt="VK"></a>
+                <a href="#"><img src="telegram-icon.png" alt="Telegram"></a>
+                <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Nightmare Studio. Все права защищены.</p>
+                <p>"Cursed Nights at Asylum" является торговой маркой Nightmare Studio.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

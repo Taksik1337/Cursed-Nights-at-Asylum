@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Русские просторы - Путешествия по России</title>
+    <link rel="stylesheet" href="style2a.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">Русские просторы</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#regions">Регионы</a></li>
+                    <li><a href="#tours">Туры</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Открой для себя Россию</h2>
+                <p>Путешествия, которые изменят ваше представление о нашей стране</p>
+                <a href="#tours" class="btn">Выбрать тур</a>
+            </div>
+        </section>
+
+        <section id="regions" class="section">
+            <h2>Популярные направления</h2>
+            <div class="regions-grid">
+                <article class="region-card">
+                    <h3>Камчатка</h3>
+                    <p>Земля вулканов и гейзеров</p>
+                    <ul>
+                        <li>Авачинская сопка</li>
+                        <li>Долина гейзеров</li>
+                        <li>Курильское озеро</li>
+                    </ul>
+                </article>
+                
+                <article class="region-card">
+                    <h3>Байкал</h3>
+                    <p>Самое глубокое озеро планеты</p>
+                    <ul>
+                        <li>Остров Ольхон</li>
+                        <li>Кругобайкальская железная дорога</li>
+                        <li>Баргузинский залив</li>
+                    </ul>
+                </article>
+                
+                <article class="region-card">
+                    <h3>Кавказ</h3>
+                    <p>Горные вершины и древние традиции</p>
+                    <ul>
+                        <li>Эльбрус</li>
+                        <li>Домбай</li>
+                        <li>Архыз</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="tours" class="section">
+            <h2>Наши туры</h2>
+            <div class="tours-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Название тура</th>
+                            <th>Длительность</th>
+                            <th>Сложность</th>
+                            <th>Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Треккинг на Эльбрус</td>
+                            <td>7 дней</td>
+                            <td>Средняя</td>
+                            <td>35 000 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>Байкальское кольцо</td>
+                            <td>10 дней</td>
+                            <td>Легкая</td>
+                            <td>42 000 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>Камчатские вулканы</td>
+                            <td>14 дней</td>
+                            <td>Сложная</td>
+                            <td>68 000 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>Золотое кольцо России</td>
+                            <td>5 дней</td>
+                            <td>Легкая</td>
+                            <td>25 000 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>Почему мы?</h2>
+            <div class="features">
+                <article class="feature">
+                    <h3>Безопасность</h3>
+                    <p>Все гиды имеют международную сертификацию и опыт работы в экстремальных условиях</p>
+                </article>
+                <article class="feature">
+                    <h3>Комфорт</h3>
+                    <p>Продуманные маршруты и размещение в проверенных местах</p>
+                </article>
+                <article class="feature">
+                    <h3>Уникальность</h3>
+                    <p>Эксклюзивные программы, недоступные массовому туристу</p>
+                </article>
+            </div>
+        </section>
+
+        <aside class="promo-banner">
+            <h3>Спецпредложение!</h3>
+            <p>При бронировании двух туров - скидка 15% на второй</p>
+            <a href="#contact" class="btn btn-secondary">Узнать подробности</a>
+        </aside>
+
+        <section id="gallery" class="section">
+            <h2>Галерея впечатлений</h2>
+            <div class="gallery-grid">
+                <figure>
+                    <img src="mountains.jpg" alt="Горный пейзаж Кавказа" width="400" height="300">
+                    <figcaption>Кавказские горы</figcaption>
+                </figure>
+                <figure>
+                    <img src="lake.jpg" alt="Озеро Байкал" width="400" height="300">
+                    <figcaption>Байкал зимой</figcaption>
+                </figure>
+                <figure>
+                    <img src="valley.jpg" alt="Долина гейзеров" width="400" height="300">
+                    <figcaption>Камчатские гейзеры</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Свяжитесь с нами</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><strong>Телефон:</strong> <a href="tel:+78005553535">+7 (800) 555-35-35</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@russian-travel.ru?subject=Запрос%20на%20тур">info@russian-travel.ru</a></p>
+                    <p><strong>Адрес:</strong> Москва, ул. Путешественников, 15</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="message">Сообщение:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        
+                        <button type="submit" class="btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Русские просторы</h3>
+                    <p>© 2023 Все права защищены</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://vk.com" target="_blank">VK</a>
+                    <a href="https://telegram.org" target="_blank">Telegram</a>
+                    <a href="https://youtube.com" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

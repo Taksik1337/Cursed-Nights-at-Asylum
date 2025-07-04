@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа №4 - Элементы форм и медиа</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #6b8cae;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --warning: #ffc107;
+            --info: #17a2b8;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .card-title i {
+            margin-right: 10px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .card-title h2 {
+            color: var(--dark);
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Стилизация placeholder с помощью псевдоэлемента */
+        input::placeholder {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        textarea::placeholder {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        /* Демонстрация overflow */
+        .overflow-demo {
+            height: 150px;
+            overflow: auto;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            margin-top: 10px;
+            background: #f8f9fa;
+        }
+
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-item, .radio-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-item input, .radio-item input {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #3a5a80;
+            transform: translateY(-2px);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .btn-submit {
+            background: var(--success);
+        }
+
+        .btn-submit:hover {
+            background: #218838;
+        }
+
+        .btn-reset {
+            background: var(--warning);
+            color: var(--dark);
+        }
+
+        .btn-reset:hover {
+            background: #e0a800;
+        }
+
+        fieldset {
+            border: 2px solid var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            padding: 0 10px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .media-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .media-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .media-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .media-card iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: var(--border-radius);
+        }
+
+        .required::after {
+            content: " *";
+            color: var(--accent);
+        }
+
+        .form-footer {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        /* Демонстрация единиц измерения */
+        .unit-demo {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f4f8;
+            border-radius: var(--border-radius);
+        }
+
+        .unit-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            background: var(--primary);
+        }
+
+        .px-box { width: 100px; height: 50px; }
+        .percent-box { width: 25%; height: 50px; }
+        .vw-box { width: 15vw; height: 50px; }
+        .vh-box { width: 100px; height: 10vh; }
+        .em-box { width: 10em; height: 5em; }
+        .rem-box { width: 10rem; height: 5rem; }
+
+        /* Демонстрация overflow-wrap */
+        .overflow-wrap-demo {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            background: #f8f9fa;
+        }
+
+        .normal-wrap {
+            overflow-wrap: normal;
+            width: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .break-word {
+            overflow-wrap: break-word;
+            width: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Практическая работа №4</h1>
+            <p class="subtitle">Демонстрация элементов форм, медиа-контента и CSS-свойств</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-user"></i>
+                    <h2>Личная информация</h2>
+                </div>
+                <form id="personalForm">
+                    <div class="form-group">
+                        <label for="fullName" class="required">ФИО</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Введите ваше полное имя" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="required">Email</label>
+                        <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (999) 999-99-99" pattern="\+7\s?[\(]{0,1}[0-9]{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" placeholder="Не менее 8 символов" minlength="8">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="birthDate">Дата рождения</label>
+                        <input type="date" id="birthDate" name="birthDate" min="1920-01-01" max="2020-12-31">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meetingTime">Время встречи</label>
+                        <input type="datetime-local" id="meetingTime" name="meetingTime">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="avatar">Аватар</label>
+                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bio">О себе</label>
+                        <textarea id="bio" name="bio" rows="4" placeholder="Расскажите немного о себе..." maxlength="500"></textarea>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-cogs"></i>
+                    <h2>Дополнительные настройки</h2>
+                </div>
+                
+                <fieldset>
+                    <legend>Предпочтения</legend>
+                    <div class="form-group">
+                        <label>Любимые цвета</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="colorRed" name="color" value="red" checked>
+                                <label for="colorRed">Красный</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="colorBlue" name="color" value="blue">
+                                <label for="colorBlue">Синий</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="colorGreen" name="color" value="green">
+                                <label for="colorGreen">Зелёный</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Уровень опыта</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="levelBeginner" name="level" value="beginner" checked>
+                                <label for="levelBeginner">Начинающий</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="levelIntermediate" name="level" value="intermediate">
+                                <label for="levelIntermediate">Средний</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="levelAdvanced" name="level" value="advanced">
+                                <label for="levelAdvanced">Продвинутый</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <div class="form-group">
+                    <label for="country">Страна</label>
+                    <select id="country" name="country">
+                        <option value="">-- Выберите страну --</option>
+                        <option value="ru">Россия</option>
+                        <option value="us">США</option>
+                        <option value="de">Германия</option>
+                        <option value="fr">Франция</option>
+                        <option value="jp">Япония</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="interests">Интересы (выберите несколько)</label>
+                    <select id="interests" name="interests" multiple size="3">
+                        <option value="sports">Спорт</option>
+                        <option value="music">Музыка</option>
+                        <option value="books">Книги</option>
+                        <option value="travel">Путешествия</option>
+                        <option value="tech">Технологии</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="volume">Уровень громкости</label>
+                    <input type="range" id="volume" name="volume" min="0" max="100" value="50">
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Комментарии</label>
+                    <textarea id="comments" name="comments" rows="3" placeholder="Ваши комментарии и предложения..."></textarea>
+                </div>
+                
+                <div class="form-footer">
+                    <button type="submit" form="personalForm" class="btn btn-submit btn-block">
+                        <i class="fas fa-paper-plane"></i> Отправить
+                    </button>
+                    <button type="reset" form="personalForm" class="btn btn-reset">
+                        <i class="fas fa-redo"></i> Сбросить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <i class="fas fa-laptop-code"></i>
+                <h2>Демонстрация CSS-свойств</h2>
+            </div>
+            
+            <div class="form-group">
+                <h3>Свойство overflow</h3>
+                <div class="overflow-demo">
+                    <p>Это демонстрация свойства overflow. Когда содержимое превышает размеры контейнера, появляется возможность прокрутки.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h3>Единицы измерения в CSS</h3>
+                <div class="unit-demo">
+                    <div class="unit-box px-box">100px</div>
+                    <div class="unit-box percent-box">25%</div>
+                    <div class="unit-box vw-box">15vw</div>
+                    <div class="unit-box vh-box">10vh</div>
+                    <div class="unit-box em-box">10em</div>
+                    <div class="unit-box rem-box">10rem</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h3>Свойство overflow-wrap</h3>
+                <div class="overflow-wrap-demo">
+                    <p><strong>normal:</strong></p>
+                    <div class="normal-wrap">
+                        Оченьдлинноесловобезпробеловкотороенепомещаетсявконтейнере
+                    </div>
+                    
+                    <p><strong>break-word:</strong></p>
+                    <div class="break-word">
+                        Оченьдлинноесловобезпробеловкотороепереноситсянановуюстроку
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <div class="media-card">
+                <div class="card-title">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h2>Карта Google Maps</h2>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.373789063044!2d37.6184233!3d55.753676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a738fa419%3A0x7c347d506b52311f!2z0JrRgNCw0YHQvdCw0Y8g0J_Qu9C-0YnQsNC00Yw!5e0!3m2!1sru!2sru!4v1650000000000!5m2!1sru!2sru" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <div class="media-card">
+                <div class="card-title">
+                    <i class="fas fa-video"></i>
+                    <h2>Видео с YouTube</h2>
+                </div>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Практическая работа №4 по дисциплине "Веб-технологии" | &copy; 2023</p>
+            <p>Демонстрация элементов форм, медиа-контента и CSS-свойств</p>
+        </footer>
+    </div>
+
+    <script>
+        // Простой скрипт для демонстрации работы формы
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('personalForm');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Форма отправлена! В реальном приложении данные были бы отправлены на сервер.');
+            });
+            
+            // Динамическое обновление значения для range
+            const volumeSlider = document.getElementById('volume');
+            const volumeValue = document.createElement('span');
+            volumeValue.textContent = volumeSlider.value + '%';
+            volumeSlider.parentNode.insertBefore(volumeValue, volumeSlider.nextSibling);
+            
+            volumeSlider.addEventListener('input', function() {
+                volumeValue.textContent = this.value + '%';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Page-Enter" content="revealtrans(Duration=0.5,Transition=12)">
+    <meta http-equiv="Page-Exit" content="revealtrans(Duration=0.5,Transition=12)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursed Nights at Asylum - Официальный сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Cursed Nights at Asylum</h1>
+                <p>Выживи 5 ночей в проклятой лечебнице</p>
+            </div>
+            
+
+            <div class="notifications">
+                <div class="notification-icon">🔔 <span class="notification-count">3</span></div>
+                <div class="notification-list">
+                    <div class="notification-item" data-id="1">Новое обновление 1.1 доступно</div>
+                    <div class="notification-item" data-id="2">Добавлен новый монстр</div>
+                    <div class="notification-item" data-id="3">Исправлены ошибки геймплея</div>
+                </div>
+            </div>
+
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">Об игре</a></li>
+                    <li><a href="#monsters">Монстры</a></li>
+                    <li><a href="#gameplay">Игровой процесс</a></li>
+                    <li><a href="#screenshots">Галерея</a></li>
+                    <li><a href="#download">Скачать</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="game-info">
+            
+            <article>
+                <h2>Об игре</h2>
+                <p>Добро пожаловать в <strong>Blackwood Asylum</strong> - бывшую психиатрическую лечебницу с темным прошлым. Вы - ночной охранник, принявшийся за простую работу... которая превратилась в кошмар.</p>
+                
+                <p>Лечебница, выкупленная фармацевтической компанией <abbr title="Nexus Pharmaceuticals">NP</abbr>, скрывает ужасающие секреты в своих подвалах. За 5 ночей вам предстоит столкнуться с 7 уникальными монстрами - результатами неудачных экспериментов.</p>
+                
+                <blockquote>
+                    "Никто не верил моим отчетам... пока не исчезли предыдущие 4 охранника."
+                    <cite>Из записок выжившего</cite>
+                </blockquote>
+                
+                <div class="features">
+                    <h3>Особенности игры:</h3>
+                    <ul>
+                        <li>Динамическая система угроз</li>
+                        <li>7 уникальных монстров с разным поведением</li>
+                        <li>Реалистичная система ресурсов</li>
+                        <li>Прогрессирующая сложность</li>
+                        <li>Атмосферный саундтрек</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section id="map" class="map-section">
+            <h2>Карта лечебницы</h2>
+            <div class="map-container">
+                <div class="map-overlay"></div>
+                <img src="asylum-map.jpg" alt="Карта лечебницы" class="map-image">
+                <div class="map-points">
+                </div>
+            </div>
+            <div class="map-info" id="map-info"></div>
+        </section>
+
+
+        <section id="monsters" class="monsters-section">
+            <h2>Обитатели лечебницы</h2>
+            
+            <div class="monsters-grid">
+
+                <a href="patient.html" class="monster-card-link">
+                    <article class="monster-card">
+                        <div class="monster-icon">
+                            <img src="patient-icon.png" alt="Пациент">
+                        </div>
+                        <h3>Пациент</h3>
+                        <p>Ленни Грейвс, 58 лет</p>
+                        <p class="monster-description">Зомбифицированное существо в порванной смирительной рубашке</p>
+                    </article>
+                </a>
+                
+                <a href="headless.html" class="monster-card-link">
+                    <article class="monster-card">
+                        <div class="monster-icon">
+                            <img src="headless-icon.png" alt="Сорвиголова">
+                        </div>
+                        <h3>Сорвиголова</h3>
+                        <p>Бенджамин Кроу, 22 года</p>
+                        <p class="monster-description">Обезглавленное создание с сенсорным модулем вместо головы</p>
+                    </article>
+                </a>
+
+                <a href="merged.html" class="monster-card-link">
+                    <article class="monster-card">
+                        <div class="monster-icon">
+                            <img src="merged-icon.png" alt="Приращённый">
+                        </div>
+                        <h3>Приращённый</h3>
+                        <p>Гибрид из 5 тел</p>
+                        <p class="monster-description">Чудовищная многоножка с коллективным разумом, способная проникать через узкие вентиляционные шахты</p>
+                    </article>
+                </a>
+                
+                <a href="bird.html" class="monster-card-link">
+                    <article class="monster-card">
+                        <div class="monster-icon">
+                            <img src="bird-icon.png" alt="Птица Дэйв">
+                        </div>
+                        <h3>Птица Дэйв</h3>
+                        <p>Дэйв Миллер, 42 года</p>
+                        <p class="monster-description">4.4-метровый гуманоид с птичьими чертами. Ненавидит взгляды и атакует, когда на него смотрят</p>
+                    </article>
+                </a>
+
+                <a href="restless.html" class="monster-card-link">
+                    <article class="monster-card">
+                        <div class="monster-icon">
+                            <img src="doctor-icon.png" alt="Беспокойный">
+                        </div>
+                        <h3>Беспокойный</h3>
+                        <p>Доктор Элиас Торн, 50 лет</p>
+                        <p class="monster-description">4.4-метровый гуманоид с птичьими чертами. Ненавидит взгляды и атакует, когда на него смотрят</p>
+                    </article>
+                </a>
+
+                <a href="longjohn.html" class="monster-card-link">
+                    <article class="monster-card">
+                        <div class="monster-icon">
+                            <img src="longjohn-icon.png" alt="Длинный Джон">
+                        </div>
+                        <h3>Длинный Джон</h3>
+                        <p>Джон Хоббс, 15 лет</p>
+                        <p class="monster-description">Гуманоид с мертвенно-белой, почти фарфоровой кожей, сквозь которую видны темные контуры невероятно плотных костей</p>
+                    </article>
+                </a>
+
+                <a href="puppeteer.html" class="monster-card-link">
+                    <article class="monster-card">
+                        <div class="monster-icon">
+                            <img src="puppeteer-icon.png" alt="Кукольник">
+                        </div>
+                        <h3>Кукольник</h3>
+                        <p>Данные отсутствуют, предположительно ребенок</p>
+                        <p class="monster-description">Бестелесная, злобная разумная сущность, существующая в электрических сетях здания и в некоем карманном измерении</p>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+        <section id="glass-cards" class="glass-section">
+            <h2>Особенности выживания</h2>
+            <div class="glass-cards">
+                <article class="glass-card">
+                    <div class="card-content">
+                        <h3>Динамическая система угроз</h3>
+                        <p>Монстры учатся на ваших действиях и меняют тактику</p>
+                    </div>
+                </article>
+                <article class="glass-card">
+                    <div class="card-content">
+                        <h3>Ограниченные ресурсы</h3>
+                        <p>Энергия и инструменты ограничены, используйте их с умом</p>
+                    </div>
+                </article>
+                <article class="glass-card">
+                    <div class="card-content">
+                        <h3>Реалистичная атмосфера</h3>
+                        <p>3D звук и детализированная графика погружают в ужас</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="gameplay" class="gameplay-section">
+            <h2>Игровой процесс</h2>
+            
+            <div class="gameplay-content">
+                <div class="tools-info">
+                    <h3>Ваши инструменты</h3>
+                    <ol>
+                        <li>Система безопасности
+                            <ul>
+                                <li>Камеры наблюдения</li>
+                                <li>Датчики движения</li>
+                            </ul>
+                        </li>
+                        <li>Система защиты
+                            <ul>
+                                <li>Бронированные двери</li>
+                                <li>Вентиляционные заслонки</li>
+                            </ul>
+                        </li>
+                        <li>Ручные инструменты
+                            <ul>
+                                <li>Фонарик</li>
+                                <li>Рация</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                
+                <div class="difficulty-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ночь</th>
+                                <th>Активные монстры</th>
+                                <th>Сложность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>★☆☆☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>★★☆☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>5</td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>6</td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>★★★★★</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="gallery-section">
+            <h2>Галерея скриншотов</h2>
+            <div class="mosaic-grid">
+                <figure class="mosaic-item item1">
+                    <img src="screenshot1.jpg" alt="Охранный пост">
+                    <figcaption>Охранный пост</figcaption>
+                </figure>
+                <figure class="mosaic-item item2">
+                    <img src="screenshot2.jpg" alt="Коридор лечебницы">
+                    <figcaption>Коридор лечебницы</figcaption>
+                </figure>
+                <figure class="mosaic-item item3">
+                    <img src="screenshot3.jpg" alt="Палата пациента">
+                    <figcaption>Палата пациента</figcaption>
+                </figure>
+                <figure class="mosaic-item item4">
+                    <img src="screenshot4.jpg" alt="Вентиляционные шахты">
+                    <figcaption>Вентиляционные шахты</figcaption>
+                </figure>
+                <figure class="mosaic-item item5">
+                    <img src="screenshot5.jpg" alt="Монстр в темноте">
+                    <figcaption>Монстр в темноте</figcaption>
+                </figure>
+                <figure class="mosaic-item item6">
+                    <img src="screenshot6.jpg" alt="Система наблюдения">
+                    <figcaption>Система наблюдения</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+    
+    <section class="trailer-section">
+        <div class="trailer-container">
+            <div class="video-wrapper">
+                <video poster="trailer-poster.jpg" controls>
+                    <source src="game-trailer.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+            <div class="video-caption">
+                <h3>Официальный трейлер</h3>
+                <p>Погрузитесь в атмосферу лечебницы Blackwood Asylum</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="difficulty-section">
+        <h2>Настройка сложности</h2>
+        <div class="difficulty-controls">
+            <div class="difficulty-option" data-level="easy">
+                <h3>Легкий</h3>
+                <p>Для новичков</p>
+                <ul>
+                    <li>Монстры медленнее</li>
+                    <li>Больше ресурсов</li>
+                    <li>Системы защиты эффективнее</li>
+                </ul>
+            </div>
+            <div class="difficulty-option active" data-level="normal">
+                <h3>Стандартный</h3>
+                <p>Рекомендуется</p>
+                <ul>
+                    <li>Баланс сложности</li>
+                    <li>Оптимальное количество ресурсов</li>
+                </ul>
+            </div>
+            <div class="difficulty-option" data-level="hard">
+                <h3>Сложный</h3>
+                <p>Для экспертов</p>
+                <ul>
+                    <li>Монстры быстрее и умнее</li>
+                    <li>Ограниченные ресурсы</li>
+                    <li>Системы защиты менее эффективны</li>
+                </ul>
+            </div>
+        </div>
+        <button id="apply-difficulty" class="btn">Применить настройки</button>
+    </section>
+    
+    <section id="download" class="download-section">
+        <div class="download-content">
+            <h2>Начните свое кошмарное приключение</h2>
+            <div class="download-options">
+                <a href="#" class="btn btn-pulse">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Скачать для Windows
+                </a>
+                <a href="#" class="btn btn-3d">
+                    Скачать для Linux
+                </a>
+            </div>
+            <p>Версия 1.0 | Размер: 850 MB</p>
+        </div>
+        <div class="event-timer">
+            <p>Следующее событие через: <span id="event-timer">00:00:00</span></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h3>Cursed Nights at Asylum</h3>
+                <p>Выживи 5 ночей в проклятой лечебнице</p>
+            </div>
+        
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#about">Об игре</a></li>
+                    <li><a href="#monsters">Монстры</a></li>
+                    <li><a href="#gameplay">Игровой процесс</a></li>
+                    <li><a href="#screenshots">Галерея</a></li>
+                    <li><a href="#download">Скачать</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-contact">
+                <h4>Контакты</h4>
+                <p><a href="mailto:support@cursednights.com">support@cursednights.com</a></p>
+                <p><a href="tel:+78005551234">+7 (800) 555-1234</a></p>
+            </div>
+        
+            <div class="footer-social">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon vk">
+                    <span>VK</span>
+                    </a>
+                    <a href="#" class="social-icon tg">
+                    <span>Telegram</span>
+                    </a>
+                    <a href="#" class="social-icon yt">
+                    <span>YouTube</span>
+                    </a>
+                </div>
+            </div>
+        
+            <div class="footer-copyright">
+                <p>&copy; 2023 Nightmare Studio. Все права защищены.</p>
+                <p>"Cursed Nights at Asylum" является торговой маркой Nightmare Studio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    
+    // Система уведомлений
+        document.querySelector('.notification-icon').addEventListener('click', function() {
+            const list = document.querySelector('.notification-list');
+            list.classList.toggle('active');
+            
+            // Помечаем уведомления как прочитанные
+            if (list.classList.contains('active')) {
+                document.querySelectorAll('.notification-item').forEach(item => {
+                    item.classList.add('read');
+                });
+                document.querySelector('.notification-count').textContent = '0';
+            }
+        });
+        
+        // Закрытие при клике вне области
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.notifications')) {
+                document.querySelector('.notification-list').classList.remove('active');
+            }
+        });
+        
+        // Интерактивная карта
+        const mapPoints = [
+            { x: 25, y: 30, title: "Главный вход", description: "Основной вход в лечебницу. Всегда заблокирован." },
+            { x: 65, y: 45, title: "Охранный пост", description: "Ваше рабочее место. Здесь вы проводите ночи." },
+            { x: 40, y: 60, title: "Палата 104", description: "Логово Пациента (Ленни Грейвс)" },
+            { x: 75, y: 70, title: "Карцер №3", description: "Логово Птицы Дэйва" },
+            { x: 20, y: 80, title: "Подвал", description: "Зона повышенной опасности" }
+        ];
+
+        const mapContainer = document.querySelector('.map-container');
+        const mapPointsContainer = document.querySelector('.map-points');
+        const mapInfo = document.getElementById('map-info');
+
+        mapPoints.forEach(point => {
+            const pointEl = document.createElement('div');
+            pointEl.className = 'map-point';
+            pointEl.style.left = `${point.x}%`;
+            pointEl.style.top = `${point.y}%`;
+            pointEl.innerHTML = '<div class="point-pulse"></div>';
+            
+            pointEl.addEventListener('mouseenter', () => {
+                mapInfo.innerHTML = `
+                    <h3>${point.title}</h3>
+                    <p>${point.description}</p>
+                `;
+                mapInfo.style.display = 'block';
+            });
+            
+            pointEl.addEventListener('mouseleave', () => {
+                mapInfo.style.display = 'none';
+            });
+            
+            mapPointsContainer.appendChild(pointEl);
+        });
+
+        // Система сложности
+        const difficultyOptions = document.querySelectorAll('.difficulty-option');
+        const applyButton = document.getElementById('apply-difficulty');
+
+        difficultyOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                difficultyOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        applyButton.addEventListener('click', function() {
+            const selectedOption = document.querySelector('.difficulty-option.active');
+            const level = selectedOption.dataset.level;
+            
+            // Здесь будет логика применения сложности
+            alert(`Установлен уровень сложности: ${level === 'easy' ? 'Легкий' : level === 'normal' ? 'Стандартный' : 'Сложный'}`);
+            
+            // Анимация подтверждения
+            this.textContent = '✓ Применено!';
+            setTimeout(() => {
+                this.textContent = 'Применить настройки';
+            }, 2000);
+        });
+
+        // Таймер события
+        function updateEventTimer() {
+            const now = new Date();
+            const nextHour = new Date();
+            nextHour.setHours(now.getHours() + 1);
+            nextHour.setMinutes(0);
+            nextHour.setSeconds(0);
+            
+            const diff = nextHour - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('event-timer').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Обновляем каждую секунду
+        setInterval(updateEventTimer, 1000);
+        updateEventTimer(); // Инициализация
+
+        // Система сохранения прогресса
+        function saveProgress() {
+            const selectedDifficulty = document.querySelector('.difficulty-option.active').dataset.level;
+            const progress = {
+                difficulty: selectedDifficulty,
+                lastVisit: new Date().toISOString()
+            };
+            
+            localStorage.setItem('gameProgress', JSON.stringify(progress));
+            console.log('Прогресс сохранен:', progress);
+        }
+
+        // Загрузка прогресса
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('gameProgress');
+            if (savedProgress) {
+                const progress = JSON.parse(savedProgress);
+                
+                // Применяем сохраненную сложность
+                document.querySelectorAll('.difficulty-option').forEach(option => {
+                    if (option.dataset.level === progress.difficulty) {
+                        option.classList.add('active');
+                    } else {
+                        option.classList.remove('active');
+                    }
+                });
+                
+                console.log('Прогресс загружен:', progress);
+            }
+        }
+
+        // Сохраняем прогресс при изменении настроек
+        applyButton.addEventListener('click', saveProgress);
+
+        // Загружаем прогресс при загрузке страницы
+        window.addEventListener('DOMContentLoaded', loadProgress);
+
+        // Анимированный фон для секции монстров
+        const monstersSection = document.getElementById('monsters');
+        const monstersGrid = document.querySelector('.monsters-grid');
+
+        monstersSection.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            monstersGrid.style.transform = `perspective(1000px) rotateX(${y * 5}deg) rotateY(${x * 5}deg)`;
+        });
+
+        monstersSection.addEventListener('mouseleave', () => {
+            monstersGrid.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        });
+
+        // Автоматическое обновление года в подвале
+        document.querySelector('.footer-copyright p').innerHTML = 
+            `&copy; ${new Date().getFullYear()} Nightmare Studio. Все права защищены.`;
+    
+    
+    </script>
+</body>
+</html>
