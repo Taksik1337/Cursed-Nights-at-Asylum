@@ -1674,3 +1674,33 @@ footer {
     font-weight: bold;
     color: var(--accent-red);
 }
+.custom-cursor {
+    cursor: none !important;
+}
+
+#custom-cursor {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: 2px solid var(--accent-red);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.7);
+    width: 20px;
+    height: 20px;
+}
+
+.cursor-btn {
+    background: var(--accent-red);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.cursor-btn:hover {
+    background: #6a0000;
+}

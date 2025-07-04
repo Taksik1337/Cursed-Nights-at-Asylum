@@ -38,6 +38,7 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="#about">Об игре</a></li>
+                    <li><a href="#map">Карта</a></li>
                     <li><a href="#monsters">Монстры</a></li>
                     <li><a href="#gameplay">Игровой процесс</a></li>
                     <li><a href="#screenshots">Галерея</a></li>
@@ -167,30 +168,6 @@
                         <p class="monster-description">Бестелесная, злобная разумная сущность, существующая в электрических сетях здания и в некоем карманном измерении</p>
                     </article>
                 </a>
-            </div>
-        </section>
-
-        <section id="glass-cards" class="glass-section">
-            <h2>Особенности выживания</h2>
-            <div class="glass-cards">
-                <article class="glass-card">
-                    <div class="card-content">
-                        <h3>Динамическая система угроз</h3>
-                        <p>Монстры учатся на ваших действиях и меняют тактику</p>
-                    </div>
-                </article>
-                <article class="glass-card">
-                    <div class="card-content">
-                        <h3>Ограниченные ресурсы</h3>
-                        <p>Энергия и инструменты ограничены, используйте их с умом</p>
-                    </div>
-                </article>
-                <article class="glass-card">
-                    <div class="card-content">
-                        <h3>Реалистичная атмосфера</h3>
-                        <p>3D звук и детализированная графика погружают в ужас</p>
-                    </div>
-                </article>
             </div>
         </section>
 
@@ -375,6 +352,7 @@
                 <h4>Навигация</h4>
                 <ul>
                     <li><a href="#about">Об игре</a></li>
+                    <li><a href="#map">Карта</a></li>
                     <li><a href="#monsters">Монстры</a></li>
                     <li><a href="#gameplay">Игровой процесс</a></li>
                     <li><a href="#screenshots">Галерея</a></li>
@@ -386,6 +364,7 @@
                 <h4>Контакты</h4>
                 <p><a href="mailto:support@cursednights.com">support@cursednights.com</a></p>
                 <p><a href="tel:+78005551234">+7 (800) 555-1234</a></p>
+                <button id="cursor-toggle" class="cursor-btn">Кастомный курсор</button>
             </div>
         
             <div class="footer-social">
@@ -435,11 +414,11 @@
         
         // Интерактивная карта
         const mapPoints = [
-            { x: 25, y: 30, title: "Главный вход", description: "Основной вход в лечебницу. Всегда заблокирован." },
-            { x: 65, y: 45, title: "Охранный пост", description: "Ваше рабочее место. Здесь вы проводите ночи." },
-            { x: 40, y: 60, title: "Палата 104", description: "Логово Пациента (Ленни Грейвс)" },
-            { x: 75, y: 70, title: "Карцер №3", description: "Логово Птицы Дэйва" },
-            { x: 20, y: 80, title: "Подвал", description: "Зона повышенной опасности" }
+            { x: 50, y: 2, title: "Главный вход", description: "Основной вход в лечебницу. Всегда заблокирован." },
+            { x: 50, y: 95, title: "Охранный пост", description: "Ваше рабочее место. Здесь вы проводите ночи." },
+            { x: 92, y: 25, title: "Палата 104", description: "Логово Пациента (палата Ленни Грейвса)" },
+            { x: 92, y: 36, title: "Палата 105", description: "Логово Сорвиголовы (палата Бенджамина Кроу)" },
+            { x: 12, y: 6, title: "Спуск в подвал", description: "Зона повышенной опасности" }
         ];
 
         const mapContainer = document.querySelector('.map-container');
@@ -571,6 +550,46 @@
             `&copy; ${new Date().getFullYear()} Nightmare Studio. Все права защищены.`;
     
     
+        
+        // Создаем элемент кастомного курсора
+        const customCursor = document.createElement('div');
+        customCursor.id = 'custom-cursor';
+        document.body.appendChild(customCursor);
+
+        // Функция для включения/выключения кастомного курсора
+        function toggleCustomCursor() {
+            const isEnabled = document.body.classList.toggle('custom-cursor');
+            customCursor.style.display = isEnabled ? 'block' : 'none';
+            
+            // Сохраняем состояние в localStorage
+            localStorage.setItem('customCursorEnabled', isEnabled);
+            
+            // Обновляем текст кнопки
+            cursorToggleBtn.textContent = isEnabled ? 
+                'Обычный курсор' : 'Кастомный курсор';
+        }
+
+        // Обработчик движения мыши
+        document.addEventListener('mousemove', (e) => {
+            if (document.body.classList.contains('custom-cursor')) {
+                customCursor.style.left = `${e.clientX}px`;
+                customCursor.style.top = `${e.clientY}px`;
+            }
+        });
+
+        // Находим кнопку и добавляем обработчик
+        const cursorToggleBtn = document.getElementById('cursor-toggle');
+        cursorToggleBtn.addEventListener('click', toggleCustomCursor);
+
+        // Проверяем сохраненные настройки при загрузке
+        document.addEventListener('DOMContentLoaded', () => {
+            const isCursorEnabled = localStorage.getItem('customCursorEnabled') === 'true';
+            if (isCursorEnabled) {
+                document.body.classList.add('custom-cursor');
+                customCursor.style.display = 'block';
+                cursorToggleBtn.textContent = 'Обычный курсор';
+            }
+        });
     </script>
 </body>
 </html>
